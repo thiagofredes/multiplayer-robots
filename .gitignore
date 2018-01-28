@@ -2,3 +2,6 @@ Library/
 Temp/
 Build[s]/
 .vscode
+*.sln
+*.csproj
+obj/
