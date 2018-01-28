@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class GameObjectState
 {
 
-    protected GameObject _controlledObject;
+    protected GameObjectWithStates _controlledBehaviour;
 
     public virtual void Reset() { }
 

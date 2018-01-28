@@ -5,9 +5,9 @@ using UnityEngine;
 public abstract class GameObjectWithStates : BaseGameObject
 {
 
-    private GameObjectState _currentState;
+    protected GameObjectState _currentState;
 
-    protected void SetState(GameObjectState state)
+    public void SetState(GameObjectState state)
     {
         if (_currentState != null)
         {
@@ -17,7 +17,7 @@ public abstract class GameObjectWithStates : BaseGameObject
         _currentState.OnEnter();
     }
 
-    protected void ResetState()
+    public void ResetState()
     {
         _currentState.Reset();
     }

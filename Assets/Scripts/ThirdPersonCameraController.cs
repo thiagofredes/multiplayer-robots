@@ -16,8 +16,6 @@ public class ThirdPersonCameraController : BaseGameObject
 
 	public bool invertY = false;
 
-    public float dampingDelay;
-
 	public GameObject playerObject;
 
 	public static Vector3 CameraForward {
@@ -115,7 +113,7 @@ public class ThirdPersonCameraController : BaseGameObject
 	void LateUpdate ()
 	{
 		if (!gamePaused && !gameEnded) {
-			this.transform.position = Vector3.SmoothDamp(this.transform.position, playerRef.transform.position + playerLookAtPointOffset, ref velocity, dampingDelay);
+			this.transform.position = Vector3.SmoothDamp(this.transform.position, playerRef.transform.position + playerLookAtPointOffset, ref velocity, Time.deltaTime);
 			this.transform.rotation = Quaternion.Euler (currentY, currentX, 0f);
 			lookAtPosition = this.transform.position;
 

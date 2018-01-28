@@ -191,8 +191,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 88634846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 0.1, z: 10}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -201,6 +201,45 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100138, guid: b91279bae39998c4d8f8b08560c274ff, type: 3}
   m_PrefabInternal: {fileID: 1140216576}
+--- !u!114 &1104561427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104561426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3908ffcbe9aa5f4ca8cbb95f6c5041e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePaused: 0
+  gameEnded: 0
+  gameResumed: 0
+  characterController: {fileID: 1104561430}
+  movementSpeed: 5
+  playerAnimator: {fileID: 1104561428}
+--- !u!95 &1104561428 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: b91279bae39998c4d8f8b08560c274ff,
+    type: 3}
+  m_PrefabInternal: {fileID: 1140216576}
+--- !u!143 &1104561430
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104561426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.91
+  m_Radius: 0.32
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.96, z: 0}
 --- !u!1001 &1140216576
 Prefab:
   m_ObjectHideFlags: 0
@@ -247,7 +286,7 @@ Prefab:
     - target: {fileID: 9500000, guid: b91279bae39998c4d8f8b08560c274ff, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: 9aef9fa26d5559842b317299a62c9d8b, type: 2}
     - target: {fileID: 9500000, guid: b91279bae39998c4d8f8b08560c274ff, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -649,14 +688,13 @@ MonoBehaviour:
   sensivityX: 100
   sensivityY: 100
   maxAngleY: 75
-  minAngleY: 20
+  minAngleY: -45
   invertX: 0
   invertY: 0
-  dampingDelay: 0
   playerObject: {fileID: 1104561426}
-  playerLookAtPointOffset: {x: 0, y: 0, z: 0}
-  maxDistanceToPlayer: 5
-  minDistanceToPlayer: 1
+  playerLookAtPointOffset: {x: 0, y: 1, z: 0}
+  maxDistanceToPlayer: 4
+  minDistanceToPlayer: 2
   cameraSkin: 0.5
   layersToIgnoreOnRaycast:
   - Player
